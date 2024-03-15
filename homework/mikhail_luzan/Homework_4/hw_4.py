@@ -9,7 +9,7 @@ print("The last element of 'tuple' key:", my_dict['tuple'][-1])
 my_dict['list'].append(1544)
 my_dict['list'].pop(1)
 
-my_dict['dict']['dict_tuple'] = ('i am a tuple', 'element 2', 'element 3')
+my_dict['dict'][('i am a tuple',)] = ('element 1', )
 my_dict['dict'].pop('fifth')
 
 my_dict['set'].add('new')
