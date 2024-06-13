@@ -3,7 +3,7 @@ def repeat_me(count=1):
     def wrapper(func):
 
         def inner_wrapper(*args, **kwargs):
-            for x in range(count):
+            for _ in range(count):
                 func(*args, **kwargs)
 
         return inner_wrapper
