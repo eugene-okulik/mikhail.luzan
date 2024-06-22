@@ -101,5 +101,5 @@ print("\nBouquet sorted by cost:")
 print(bouquet)
 
 search_results = bouquet.search_by_min_life_time(7)
-print(f'\nSearch results by MIN life time:')
+print("\nSearch results by MIN life time:")
 print(search_results)
