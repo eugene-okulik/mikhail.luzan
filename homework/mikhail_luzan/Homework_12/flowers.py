@@ -42,7 +42,7 @@ class Bouquet:
     def avg_life_time(self):
         if not self.flowers:
             return 0
-        avg_time = sum(flower.life_time for flower in self.flowers)/len(self.flowers)
+        avg_time = sum(flower.life_time for flower in self.flowers) / len(self.flowers)
         return avg_time
 
     def sort_by_freshness(self):
@@ -69,7 +69,7 @@ rose_1 = Roses('Sentimental', 'red & white', 0.5, 95, 3, 6)
 rose_2 = Roses('Sun Sprinkles', 'yellow', 0.5, 50, 4, 7)
 
 lily_1 = Lilies('Night Rider Lily', 'red', 0.7, 80, 2, 10)
-lily_2 = Lilies('Heartstrings', 'red & yellow', 0.7,45, 3, 5)
+lily_2 = Lilies('Heartstrings', 'red & yellow', 0.7, 45, 3, 5)
 
 gypsophila_1 = Gypsophilas('My Pink', 'pink', 0.4, 100, 8, 2)
 gypsophila_2 = Gypsophilas('Million Stars', 'white', 0.4, 90, 7, 3)
@@ -101,5 +101,5 @@ print("\nBouquet sorted by cost:")
 print(bouquet)
 
 search_results = bouquet.search_by_min_life_time(7)
-print(f"\nSearch results by MIN life time:")
+print(f'\nSearch results by MIN life time:')
 print(search_results)
