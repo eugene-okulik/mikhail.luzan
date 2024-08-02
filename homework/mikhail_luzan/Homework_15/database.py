@@ -26,7 +26,7 @@ data = cursor.fetchone()
 print(f'\nStudent:\n{data}')
 
 book = '''
-insert into books 
+insert into books
 (title, taken_by_student_id)
 values (%s, %s)
 '''
@@ -43,7 +43,7 @@ query = "select * from books where taken_by_student_id = %s"
 cursor.execute(query, (student_id,))
 data = cursor.fetchall()
 
-print(f'\nBooks:')
+print('\nBooks:')
 for row in data:
     print(row)
 
@@ -76,7 +76,7 @@ data = cursor.fetchone()
 print(f'\nStudent updated:\n{data}')
 
 subject = '''
-insert into subjets 
+insert into subjets
 (title)
 values (%s)
 '''
@@ -96,7 +96,7 @@ data_reversed = data[::-1]
 
 ids = list(map(lambda item: item['id'], data_reversed))
 
-print(f'\nSubjects:')
+print('\nSubjects:')
 for row in data_reversed:
     print(row)
 
@@ -123,7 +123,7 @@ data = cursor.fetchall()
 
 ids = list(map(lambda item: item['id'], data))
 
-print(f'\nLessons:')
+print('\nLessons:')
 for row in data:
     print(row)
 
@@ -148,7 +148,7 @@ query = "select * from marks where student_id = %s"
 cursor.execute(query, (student_id,))
 data = cursor.fetchall()
 
-print(f'\nMarks:')
+print('\nMarks:')
 for row in data:
     print(row)
 
@@ -159,13 +159,13 @@ left join `groups` g on g.id = s.group_id
 left join books b on b.taken_by_student_id = s.id
 left join marks m on m.student_id = s.id
 left join lessons l on l.id = m.lesson_id
-left join subjets s2 on s2.id = l.subject_id 
+left join subjets s2 on s2.id = l.subject_id
 where s.id = %s
 '''
 cursor.execute(student_info, (student_id,))
 data = cursor.fetchall()
 
-print(f'\nStudent Info:')
+print('\nStudent Info:')
 for row in data:
     print(row)
 
