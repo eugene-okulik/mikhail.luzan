@@ -23,6 +23,8 @@ query = "select * from students where id =  %s"
 cursor.execute(query, (student_id,))
 data = cursor.fetchone()
 
+student_name = f'{data["name"]} {data["second_name"]}'
+
 print(f'\nStudent:\n{data}')
 
 book = '''
@@ -80,24 +82,21 @@ insert into subjets
 (title)
 values (%s)
 '''
-cursor.executemany(
-    subject,
-    [
-        ('Algebra',),
-        ('Geometry',),
-        ('Belarusian Literature',)
-    ]
-)
+subjects_created = ['Algebra', 'Geometry', 'Belarusian Literature']
+sub_ids = []
 
-query = "select * from subjets order by id DESC limit %s"
-cursor.execute(query, (3,))
+for x in subjects_created:
+    cursor.execute(subject, (x,))
+    subject_id = cursor.lastrowid
+    sub_ids.append(subject_id)
+
+placeholders = ', '.join(['%s'] * len(sub_ids))  # A string of placeholders is created for the SQL IN clause (%s, %s ..)
+query = f'select * from subjets where id IN ({placeholders})'
+cursor.execute(query, sub_ids)  # sub_ids = (sub_ids[0], sub_ids[1] ..)
 data = (cursor.fetchall())
-data_reversed = data[::-1]
-
-ids = list(map(lambda item: item['id'], data_reversed))
 
 print('\nSubjects:')
-for row in data_reversed:
+for row in data:
     print(row)
 
 lesson = '''
@@ -105,23 +104,18 @@ insert into lessons
 (title, subject_id)
 values (%s, %s)
 '''
-cursor.executemany(
-    lesson,
-    [
-        ('Onboarding', ids[0]),
-        ('Main', ids[0]),
-        ('Onboarding', ids[1]),
-        ('Main', ids[1]),
-        ('Onboarding', ids[2]),
-        ('Main', ids[2])
-    ]
-)
+lessons_created = ['Onboarding', 'Main']
+les_ids = []
 
-query = "select * from lessons where subject_id IN (%s, %s, %s)"
-cursor.execute(query, (ids[0], ids[1], ids[2]))
+for sub_id in sub_ids:
+    for x in lessons_created:
+        cursor.execute(lesson, (x, sub_id))
+        lesson_id = cursor.lastrowid
+        les_ids.append(lesson_id)
+
+query = f'select * from lessons where subject_id IN ({placeholders})'  # see the subject creation code above
+cursor.execute(query, sub_ids)
 data = cursor.fetchall()
-
-ids = list(map(lambda item: item['id'], data))
 
 print('\nLessons:')
 for row in data:
@@ -132,17 +126,14 @@ insert into marks
 (value, lesson_id, student_id)
 values (%s, %s, %s)
 '''
-cursor.executemany(
-    mark,
-    [
-        (8, ids[0], student_id),
-        (9, ids[1], student_id),
-        (7, ids[2], student_id),
-        (9, ids[3], student_id),
-        (7, ids[4], student_id),
-        (8, ids[5], student_id)
-    ]
-)
+
+for les_id in les_ids:
+    cursor.execute(
+        mark,
+        (
+            input(f'\nGive a mark (0-10) for the {student_name} for the Lesson {les_id}: '), les_id, student_id
+        )
+    )
 
 query = "select * from marks where student_id = %s"
 cursor.execute(query, (student_id,))
