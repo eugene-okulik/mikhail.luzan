@@ -8,7 +8,7 @@ parser = argparse.ArgumentParser(
     description=textwrap.dedent('''\
     Script for searching text in logs.
     ---------------------------------
-    
+
     !!! Please make sure that
     the path to the logs folder is enclosed in quotes
     (e.g., "/path/to/folder") !!!
