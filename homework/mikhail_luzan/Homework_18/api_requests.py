@@ -24,7 +24,7 @@ def post():
 
 
 post()
-print(f'\nThe POST request has been successfully executed')
+print('\nThe POST request has been successfully executed')
 
 
 def new_obj():
@@ -77,7 +77,7 @@ def put():
 
 
 put()
-print(f'\nThe PUT request has been successfully executed')
+print('\nThe PUT request has been successfully executed')
 
 
 def patch():
@@ -100,7 +100,7 @@ def patch():
 
 
 patch()
-print(f'\nThe PATCH request has been successfully executed')
+print('\nThe PATCH request has been successfully executed')
 
 
 def delete():
@@ -113,4 +113,4 @@ def delete():
 
 
 delete()
-print(f'\nThe DELETE request has been successfully executed')
+print('\nThe DELETE request has been successfully executed')
