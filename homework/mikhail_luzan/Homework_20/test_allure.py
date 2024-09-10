@@ -127,6 +127,6 @@ def test_delete(new_obj_id):
             f'https://api.restful-api.dev/objects/{new_obj_id}'
         )
     with allure.step('Check the response code - 200 OK'):
-       assert response.status_code == 200, 'Status code is incorrect'
+        assert response.status_code == 200, 'Status code is incorrect'
     with allure.step('Check the response message'):
         assert response.json()['message'] == f'Object with id = {new_obj_id} has been deleted.', 'Message is incorrect'
