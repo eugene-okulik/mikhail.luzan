@@ -6,7 +6,6 @@ from .endpoint import Endpoint
 
 class ApiPost(Endpoint):
 
-
     @allure.step('Create data')
     def new_post(self, payload, headers=None):
         headers = headers if headers else self.headers
@@ -18,7 +17,6 @@ class ApiPost(Endpoint):
         self.json = self.response.json()
         self.new_obj_id = self.json.get('id')
         return self.response
-
 
     @allure.step('Check the "createdAt" key in the response data')
     def check_created_at_key(self):

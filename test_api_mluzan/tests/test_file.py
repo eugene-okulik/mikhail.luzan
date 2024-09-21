@@ -3,16 +3,16 @@ import pytest
 
 POST_DATA = [
     {"name": "Apple MacBook Pro 16", "data": {"year": 2019, "price": 1849.99,
-    "CPU model": "Intel Core i9", "Hard disk size": "1 TB"}},
+     "CPU model": "Intel Core i9", "Hard disk size": "1 TB"}},
     {"name": "Apple MacBook Air", "data": {"year": 2020, "price": 1999.99,
-    "CPU model": "Apple M1", "Hard disk size": "2 TB"}},
+     "CPU model": "Apple M1", "Hard disk size": "2 TB"}},
     {"name": "Apple MacBook Pro 14", "data": {"year": 2021, "price": 2499.99,
-    "CPU model": "Apple M1 Max", "Hard disk size": "8 TB"}}
+     "CPU model": "Apple M1 Max", "Hard disk size": "8 TB"}}
 ]
 
 PUT_DATA = [
     {"name": "Apple MacBook Pro 16", "data": {"year": 2019, "price": 2049.99,
-    "CPU model": "Intel Core i9", "Hard disk size": "1 TB", "color": "silver"}}
+     "CPU model": "Intel Core i9", "Hard disk size": "1 TB", "color": "silver"}}
 ]
 
 PATCH_DATA = [

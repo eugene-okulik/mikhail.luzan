@@ -6,7 +6,6 @@ from .endpoint import Endpoint
 
 class ApiDelete(Endpoint):
 
-
     @allure.step('Delete the created object')
     def new_delete(self, new_obj_id):
         self.response = requests.delete(
@@ -14,7 +13,6 @@ class ApiDelete(Endpoint):
         )
         self.json = self.response.json()
         return self.response
-
 
     @allure.step('Check the response message')
     def check_response_message(self, new_obj_id):

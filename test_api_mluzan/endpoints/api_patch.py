@@ -6,7 +6,6 @@ from .endpoint import Endpoint
 
 class ApiPatch(Endpoint):
 
-
     @allure.step('Modify the "name" key value')
     def new_patch(self, new_obj_id, payload, headers=None):
         headers = headers if headers else self.headers
@@ -17,7 +16,6 @@ class ApiPatch(Endpoint):
         )
         self.json = self.response.json()
         return self.response
-
 
     @allure.step('Check the updated text')
     def check_updated_text(self):
