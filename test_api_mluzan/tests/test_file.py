@@ -44,7 +44,7 @@ def test_put(put_endpoint, new_obj, data):
 def test_patch(patch_endpoint, new_obj, data):
     patch_endpoint.new_patch(new_obj, payload=data)
     patch_endpoint.check_response_code_is_200()
-    patch_endpoint.check_updated_text()
+    patch_endpoint.check_updated_text(updated_text=data['name'])
     patch_endpoint.check_id_key()
     patch_endpoint.check_updated_at_key()
 
