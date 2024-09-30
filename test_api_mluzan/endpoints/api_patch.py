@@ -18,5 +18,5 @@ class ApiPatch(Endpoint):
         return self.response
 
     @allure.step('Check the updated text')
-    def check_updated_text(self):
-        assert ' (Updated Name)' in self.json['name'], 'The " (Updated Name)" is NOT added / is partially added'
+    def check_updated_text(self, updated_text):
+        assert updated_text in self.json['name'], f'The "{updated_text}" is NOT added / is partially added'

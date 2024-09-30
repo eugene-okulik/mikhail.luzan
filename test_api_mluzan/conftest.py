@@ -4,6 +4,7 @@ from .endpoints.api_post import ApiPost
 from .endpoints.api_put import ApiPut
 from .endpoints.api_patch import ApiPatch
 from .endpoints.api_delete import ApiDelete
+from .tests.test_file import POST_DATA
 
 
 @pytest.fixture()
@@ -28,15 +29,7 @@ def delete_endpoint():
 
 @pytest.fixture()
 def new_obj(post_endpoint, delete_endpoint):
-    payload = {
-        "name": "Apple MacBook Pro 16",
-        "data": {
-            "year": 2019,
-            "price": 1849.99,
-            "CPU model": "Intel Core i9",
-            "Hard disk size": "1 TB"
-        }
-    }
+    payload = POST_DATA[0]
     post_endpoint.new_post(payload)
     try:
         yield post_endpoint.new_obj_id
