@@ -76,6 +76,7 @@ class BaseSequence(SequentialTaskSet):
             else:
                 response.failure(f"DELETE failed with status {response.status_code}, response: {response.text}")
 
+
 class UserFlows(HttpUser):
     wait_time = between(1, 3)
 

@@ -7,7 +7,7 @@ from .endpoint import Endpoint
 class ApiDelete(Endpoint):
 
     @allure.step('Delete the created object')
-    def new_delete(self, new_obj_id, headers = None):
+    def new_delete(self, new_obj_id, headers=None):
         headers = headers if headers else self.headers
         self.response = requests.delete(
             f'{self.url}/{new_obj_id}',
