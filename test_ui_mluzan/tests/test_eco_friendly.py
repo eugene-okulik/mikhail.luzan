@@ -15,7 +15,6 @@ class TestEcoFriendly:
         eco_friendly.switch_asc()
         eco_friendly.check_sort_by_name(order='asc')
 
-
     @allure.story('Test Sorting By Price')
     def test_sort_by_price(self, eco_friendly):
         eco_friendly.open_page()
@@ -25,14 +24,12 @@ class TestEcoFriendly:
         eco_friendly.switch_asc()
         eco_friendly.check_sort_by_price(order="asc")
 
-
     @allure.story('Test Paging')
     def test_paging(self, eco_friendly):
         eco_friendly.open_page()
         eco_friendly.check_paging_next()
         eco_friendly.check_paging_prev()
         eco_friendly.check_paging_item()
-
 
     @allure.story('Test Limiter')
     def test_limiter(self, eco_friendly):
