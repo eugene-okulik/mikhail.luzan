@@ -25,3 +25,4 @@ class TestCreateAccount:
     def test_invalid_password_length(self, create_account):
         create_account.open_page()
         create_account.check_password_errors(dl.invalid_pass_length, dl.pass_inline_error_length)
+
