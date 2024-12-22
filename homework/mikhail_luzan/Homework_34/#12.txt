@@ -1,0 +1,270 @@
+Started by user admin
+Running as SYSTEM
+Building in workspace /var/jenkins_home/workspace/API_PROJECT
+[API_PROJECT] $ /bin/sh -xe /tmp/jenkins1895878278681012953.sh
++ cd API_testing_project
++ git pull
+Already up to date.
++ python3 -m venv venv
++ . venv/bin/activate
++ deactivate nondestructive
++ [ -n  ]
++ [ -n  ]
++ [ -n  -o -n  ]
++ [ -n  ]
++ unset VIRTUAL_ENV
++ unset VIRTUAL_ENV_PROMPT
++ [ ! nondestructive = nondestructive ]
++ VIRTUAL_ENV=/var/jenkins_home/workspace/API_PROJECT/API_testing_project/venv
++ export VIRTUAL_ENV
++ _OLD_VIRTUAL_PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++ PATH=/var/jenkins_home/workspace/API_PROJECT/API_testing_project/venv/bin:/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++ export PATH
++ [ -n  ]
++ [ -z  ]
++ _OLD_VIRTUAL_PS1=$ 
++ PS1=(venv) $ 
++ export PS1
++ VIRTUAL_ENV_PROMPT=(venv) 
++ export VIRTUAL_ENV_PROMPT
++ [ -n  -o -n  ]
++ pip install -r requirements.txt
+Requirement already satisfied: allure-pytest==2.13.5 in ./venv/lib/python3.11/site-packages (from -r requirements.txt (line 1)) (2.13.5)
+Requirement already satisfied: allure-python-commons==2.13.5 in ./venv/lib/python3.11/site-packages (from -r requirements.txt (line 2)) (2.13.5)
+Requirement already satisfied: annotated-types==0.7.0 in ./venv/lib/python3.11/site-packages (from -r requirements.txt (line 3)) (0.7.0)
+Requirement already satisfied: attrs==24.2.0 in ./venv/lib/python3.11/site-packages (from -r requirements.txt (line 4)) (24.2.0)
+Requirement already satisfied: certifi==2024.8.30 in ./venv/lib/python3.11/site-packages (from -r requirements.txt (line 5)) (2024.8.30)
+Requirement already satisfied: charset-normalizer==3.3.2 in ./venv/lib/python3.11/site-packages (from -r requirements.txt (line 6)) (3.3.2)
+Requirement already satisfied: colorama==0.4.6 in ./venv/lib/python3.11/site-packages (from -r requirements.txt (line 7)) (0.4.6)
+Requirement already satisfied: execnet==2.1.1 in ./venv/lib/python3.11/site-packages (from -r requirements.txt (line 8)) (2.1.1)
+Requirement already satisfied: idna==3.10 in ./venv/lib/python3.11/site-packages (from -r requirements.txt (line 9)) (3.10)
+Requirement already satisfied: iniconfig==2.0.0 in ./venv/lib/python3.11/site-packages (from -r requirements.txt (line 10)) (2.0.0)
+Requirement already satisfied: packaging==24.1 in ./venv/lib/python3.11/site-packages (from -r requirements.txt (line 11)) (24.1)
+Requirement already satisfied: pluggy==1.5.0 in ./venv/lib/python3.11/site-packages (from -r requirements.txt (line 12)) (1.5.0)
+Requirement already satisfied: pydantic==2.9.2 in ./venv/lib/python3.11/site-packages (from -r requirements.txt (line 13)) (2.9.2)
+Requirement already satisfied: pydantic_core==2.23.4 in ./venv/lib/python3.11/site-packages (from -r requirements.txt (line 14)) (2.23.4)
+Requirement already satisfied: pytest==8.3.3 in ./venv/lib/python3.11/site-packages (from -r requirements.txt (line 15)) (8.3.3)
+Requirement already satisfied: pytest-xdist==3.6.1 in ./venv/lib/python3.11/site-packages (from -r requirements.txt (line 16)) (3.6.1)
+Requirement already satisfied: requests==2.32.3 in ./venv/lib/python3.11/site-packages (from -r requirements.txt (line 17)) (2.32.3)
+Requirement already satisfied: typing_extensions==4.12.2 in ./venv/lib/python3.11/site-packages (from -r requirements.txt (line 18)) (4.12.2)
+Requirement already satisfied: urllib3==2.2.3 in ./venv/lib/python3.11/site-packages (from -r requirements.txt (line 19)) (2.2.3)
++ pytest -v --alluredir=allure-results
+============================= test session starts ==============================
+platform linux -- Python 3.11.2, pytest-8.3.3, pluggy-1.5.0 -- /var/jenkins_home/workspace/API_PROJECT/API_testing_project/venv/bin/python3
+cachedir: .pytest_cache
+rootdir: /var/jenkins_home/workspace/API_PROJECT/API_testing_project
+configfile: pytest.ini
+plugins: allure-pytest-2.13.5, xdist-3.6.1
+collecting ... collected 60 items
+
+tests/test_auth_api.py::TestAuthorizationPositive::test_auth_valid_name_string PASSED [  1%]
+tests/test_auth_api.py::TestAuthorizationNegative::test_auth_invalid_name_empty FAILED [  3%]
+tests/test_auth_api.py::TestAuthorizationNegative::test_auth_invalid_name_only_spaces FAILED [  5%]
+tests/test_auth_api.py::TestAuthorizationNegative::test_auth_additional_key_value FAILED [  6%]
+tests/test_auth_api.py::TestAuthorizationNegative::test_auth_no_name_key PASSED [  8%]
+tests/test_auth_api.py::TestAuthorizationNegative::test_auth_invalid_name_single_quotes FAILED [ 10%]
+tests/test_auth_api.py::TestAuthorizationNegative::test_auth_invalid_name_integer PASSED [ 11%]
+tests/test_auth_api.py::TestAuthorizationNegative::test_auth_invalid_name_float PASSED [ 13%]
+tests/test_auth_api.py::TestAuthorizationNegative::test_auth_invalid_name_boolean PASSED [ 15%]
+tests/test_auth_api.py::TestAuthorizationNegative::test_auth_invalid_name_none PASSED [ 16%]
+tests/test_auth_api.py::TestAuthorizationNegative::test_auth_invalid_name_empty_array PASSED [ 18%]
+tests/test_auth_api.py::TestAuthorizationNegative::test_auth_invalid_name_array PASSED [ 20%]
+tests/test_auth_api.py::TestAuthorizationNegative::test_auth_invalid_name_empty_object PASSED [ 21%]
+tests/test_auth_api.py::TestAuthorizationNegative::test_auth_invalid_name_object PASSED [ 23%]
+tests/test_auth_token_api.py::TestToken::test_valid_auth_token PASSED    [ 25%]
+tests/test_auth_token_api.py::TestToken::test_invalid_auth_token PASSED  [ 26%]
+tests/test_delete_api.py::TestDeleteMemePositive::test_delete_meme PASSED [ 28%]
+tests/test_delete_api.py::TestDeleteMemeNegative::test_delete_without_token PASSED [ 30%]
+tests/test_delete_api.py::TestDeleteMemeNegative::test_delete_with_invalid_token PASSED [ 31%]
+tests/test_delete_api.py::TestDeleteMemeNegative::test_delete_twice PASSED [ 33%]
+tests/test_delete_api.py::TestDeleteMemeNegative::test_delete_with_invalid_id PASSED [ 35%]
+tests/test_delete_api.py::TestDeleteMemeNegative::test_delete_with_negative_id PASSED [ 36%]
+tests/test_delete_api.py::TestDeleteMemeNegative::test_delete_on_behalf_of_another_user PASSED [ 38%]
+tests/test_get_all_api.py::TestGetAllMemesPositive::test_get_all_check_memes_structure PASSED [ 40%]
+tests/test_get_all_api.py::TestGetAllMemesPositive::test_get_all_find_object_by_id PASSED [ 41%]
+tests/test_get_all_api.py::TestGetAllMemesPositive::test_get_all_find_object_by_name PASSED [ 43%]
+tests/test_get_all_api.py::TestGetAllMemesNegative::test_get_all_without_token PASSED [ 45%]
+tests/test_get_all_api.py::TestGetAllMemesNegative::test_get_all_with_invalid_token PASSED [ 46%]
+tests/test_get_meme_api.py::TestGetMemePositive::test_get_meme PASSED    [ 48%]
+tests/test_get_meme_api.py::TestGetMemePositive::test_get_check_meme_structure PASSED [ 50%]
+tests/test_get_meme_api.py::TestGetMemeNegative::test_get_without_token PASSED [ 51%]
+tests/test_get_meme_api.py::TestGetMemeNegative::test_get_with_invalid_token PASSED [ 53%]
+tests/test_get_meme_api.py::TestGetMemeNegative::test_get_invalid_id PASSED [ 55%]
+tests/test_get_meme_api.py::TestGetMemeNegative::test_get_with_negative_id PASSED [ 56%]
+tests/test_post_api.py::TestCreateMemePositive::test_post_meme PASSED    [ 58%]
+tests/test_post_api.py::TestCreateMemeNegative::test_post_without_token PASSED [ 60%]
+tests/test_post_api.py::TestCreateMemeNegative::test_create_with_invalid_token PASSED [ 61%]
+tests/test_post_api.py::TestCreateMemeNegative::test_post_invalid_object_no_text PASSED [ 63%]
+tests/test_post_api.py::TestCreateMemeNegative::test_post_invalid_object_no_url PASSED [ 65%]
+tests/test_post_api.py::TestCreateMemeNegative::test_post_invalid_object_no_tags PASSED [ 66%]
+tests/test_post_api.py::TestCreateMemeNegative::test_post_invalid_object_no_info PASSED [ 68%]
+tests/test_post_api.py::TestCreateMemeNegative::test_post_add_any_key_value_pair FAILED [ 70%]
+tests/test_post_api.py::TestCreateMemeNegative::test_post_invalid_type_text_is_number PASSED [ 71%]
+tests/test_post_api.py::TestCreateMemeNegative::test_post_invalid_type_url_is_boolean PASSED [ 73%]
+tests/test_post_api.py::TestCreateMemeNegative::test_post_invalid_type_tags_is_object PASSED [ 75%]
+tests/test_post_api.py::TestCreateMemeNegative::test_post_invalid_type_info_is_array PASSED [ 76%]
+tests/test_put_api.py::TestUpdateMemePositive::test_put_meme PASSED      [ 78%]
+tests/test_put_api.py::TestUpdateMemeNegative::test_put_without_token PASSED [ 80%]
+tests/test_put_api.py::TestUpdateMemeNegative::test_put_send_like_path_method PASSED [ 81%]
+tests/test_put_api.py::TestUpdateMemeNegative::test_put_object_invalid_id PASSED [ 83%]
+tests/test_put_api.py::TestUpdateMemeNegative::test_put_object_no_text PASSED [ 85%]
+tests/test_put_api.py::TestUpdateMemeNegative::test_put_object_no_url PASSED [ 86%]
+tests/test_put_api.py::TestUpdateMemeNegative::test_put_object_no_tags PASSED [ 88%]
+tests/test_put_api.py::TestUpdateMemeNegative::test_put_object_no_info PASSED [ 90%]
+tests/test_put_api.py::TestUpdateMemeNegative::test_put_add_any_key_value_pair FAILED [ 91%]
+tests/test_put_api.py::TestUpdateMemeNegative::test_put_invalid_type_text_is_object PASSED [ 93%]
+tests/test_put_api.py::TestUpdateMemeNegative::test_put_invalid_type_url_is_array PASSED [ 95%]
+tests/test_put_api.py::TestUpdateMemeNegative::test_put_invalid_type_tags_is_none PASSED [ 96%]
+tests/test_put_api.py::TestUpdateMemeNegative::test_put_invalid_type_info_is_string PASSED [ 98%]
+tests/test_put_api.py::TestUpdateMemeNegative::test_put_on_behalf_of_another_user PASSED [100%]
+
+=================================== FAILURES ===================================
+____________ TestAuthorizationNegative.test_auth_invalid_name_empty ____________
+
+self = <API_testing_project.tests.test_auth_api.TestAuthorizationNegative object at 0x7f83f8c47ed0>
+
+    @allure.story('Invalid name: empty string')
+    @pytest.mark.regression
+    def test_auth_invalid_name_empty(self):
+        self.auth_api.authorize(payload=payloads_list.auth_invalid_name_empty)
+>       self.auth_api.check_response_code_is_400()
+
+tests/test_auth_api.py:27: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <API_testing_project.endpoints.authorization.Authorization object at 0x7f83f8a90410>
+
+    @allure.step('Check the response code - 400 Bad Request')
+    def check_response_code_is_400(self):
+>       assert self.response.status_code == 400, f'The Response status code is {self.response.status_code}'
+E       AssertionError: The Response status code is 200
+
+endpoints/base_endpoint.py:36: AssertionError
+---------------------------- Captured stdout setup -----------------------------
+Using existing token: vcCZab6etIrcKpm
+_________ TestAuthorizationNegative.test_auth_invalid_name_only_spaces _________
+
+self = <API_testing_project.tests.test_auth_api.TestAuthorizationNegative object at 0x7f83f8c47910>
+
+    @allure.story('Invalid name: only spaces string')
+    @pytest.mark.regression
+    def test_auth_invalid_name_only_spaces(self):
+        self.auth_api.authorize(payload=payloads_list.auth_invalid_name_only_spaces)
+>       self.auth_api.check_response_code_is_400()
+
+tests/test_auth_api.py:34: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <API_testing_project.endpoints.authorization.Authorization object at 0x7f83f8bc1a90>
+
+    @allure.step('Check the response code - 400 Bad Request')
+    def check_response_code_is_400(self):
+>       assert self.response.status_code == 400, f'The Response status code is {self.response.status_code}'
+E       AssertionError: The Response status code is 200
+
+endpoints/base_endpoint.py:36: AssertionError
+---------------------------- Captured stdout setup -----------------------------
+Using existing token: vcCZab6etIrcKpm
+___________ TestAuthorizationNegative.test_auth_additional_key_value ___________
+
+self = <API_testing_project.tests.test_auth_api.TestAuthorizationNegative object at 0x7f83f8c47310>
+
+    @allure.story('Additional key-value pair')
+    @pytest.mark.regression
+    def test_auth_additional_key_value(self):
+        self.auth_api.authorize(payload=payloads_list.auth_additional_key_value)
+>       self.auth_api.check_response_code_is_400()
+
+tests/test_auth_api.py:41: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <API_testing_project.endpoints.authorization.Authorization object at 0x7f83f8a47150>
+
+    @allure.step('Check the response code - 400 Bad Request')
+    def check_response_code_is_400(self):
+>       assert self.response.status_code == 400, f'The Response status code is {self.response.status_code}'
+E       AssertionError: The Response status code is 200
+
+endpoints/base_endpoint.py:36: AssertionError
+---------------------------- Captured stdout setup -----------------------------
+Using existing token: vcCZab6etIrcKpm
+________ TestAuthorizationNegative.test_auth_invalid_name_single_quotes ________
+
+self = <API_testing_project.tests.test_auth_api.TestAuthorizationNegative object at 0x7f83f8c465d0>
+
+    @allure.story('Invalid name: single quotes')
+    @pytest.mark.regression
+    def test_auth_invalid_name_single_quotes(self):
+        self.auth_api.authorize(payload=payloads_list.auth_invalid_name_single_quotes)
+>       self.auth_api.check_response_code_is_400()
+
+tests/test_auth_api.py:55: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <API_testing_project.endpoints.authorization.Authorization object at 0x7f83f8a58b10>
+
+    @allure.step('Check the response code - 400 Bad Request')
+    def check_response_code_is_400(self):
+>       assert self.response.status_code == 400, f'The Response status code is {self.response.status_code}'
+E       AssertionError: The Response status code is 200
+
+endpoints/base_endpoint.py:36: AssertionError
+---------------------------- Captured stdout setup -----------------------------
+Using existing token: vcCZab6etIrcKpm
+___________ TestCreateMemeNegative.test_post_add_any_key_value_pair ____________
+
+self = <API_testing_project.tests.test_post_api.TestCreateMemeNegative object at 0x7f83f8cb82d0>
+
+    @allure.story('Create object with any additional key/value pair')
+    @pytest.mark.regression
+    def test_post_add_any_key_value_pair(self):
+        self.post_meme_api.post_meme(payload=payloads_list.post_add_any_key_value_pair)
+>       self.post_meme_api.check_response_code_is_400()
+
+tests/test_post_api.py:75: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <API_testing_project.endpoints.post_meme.PostMeme object at 0x7f83f8be5090>
+
+    @allure.step('Check the response code - 400 Bad Request')
+    def check_response_code_is_400(self):
+>       assert self.response.status_code == 400, f'The Response status code is {self.response.status_code}'
+E       AssertionError: The Response status code is 200
+
+endpoints/base_endpoint.py:36: AssertionError
+---------------------------- Captured stdout setup -----------------------------
+Using existing token: vcCZab6etIrcKpm
+____________ TestUpdateMemeNegative.test_put_add_any_key_value_pair ____________
+
+self = <API_testing_project.tests.test_put_api.TestUpdateMemeNegative object at 0x7f83f8c85b90>
+new_obj = 138
+
+    @allure.story('Update object with any additional key/value pair')
+    @pytest.mark.regression
+    def test_put_add_any_key_value_pair(self, new_obj):
+        self.put_meme_api.put_meme(obj_id=new_obj, payload=payloads_list.put_add_any_key_value_pair)
+>       self.put_meme_api.check_response_code_is_400()
+
+tests/test_put_api.py:81: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <API_testing_project.endpoints.put_meme.PutMeme object at 0x7f83f8b43490>
+
+    @allure.step('Check the response code - 400 Bad Request')
+    def check_response_code_is_400(self):
+>       assert self.response.status_code == 400, f'The Response status code is {self.response.status_code}'
+E       AssertionError: The Response status code is 200
+
+endpoints/base_endpoint.py:36: AssertionError
+---------------------------- Captured stdout setup -----------------------------
+Using existing token: vcCZab6etIrcKpm
+=========================== short test summary info ============================
+FAILED tests/test_auth_api.py::TestAuthorizationNegative::test_auth_invalid_name_empty - AssertionError: The Response status code is 200
+FAILED tests/test_auth_api.py::TestAuthorizationNegative::test_auth_invalid_name_only_spaces - AssertionError: The Response status code is 200
+FAILED tests/test_auth_api.py::TestAuthorizationNegative::test_auth_additional_key_value - AssertionError: The Response status code is 200
+FAILED tests/test_auth_api.py::TestAuthorizationNegative::test_auth_invalid_name_single_quotes - AssertionError: The Response status code is 200
+FAILED tests/test_post_api.py::TestCreateMemeNegative::test_post_add_any_key_value_pair - AssertionError: The Response status code is 200
+FAILED tests/test_put_api.py::TestUpdateMemeNegative::test_put_add_any_key_value_pair - AssertionError: The Response status code is 200
+======================== 6 failed, 54 passed in 17.61s =========================
+Build step 'Execute shell' marked build as failure
+Finished: FAILURE
